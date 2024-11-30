@@ -61,9 +61,10 @@ export const Signup = () => {
             <Button
               onClick={async () => {
                 //console.log(process.env.REACT_APP_Render_Server_Url)
+                //console.log(import.meta.env.VITE_RENDER_SERVER_URL)
                 const response = await axios.post(
                   
-                  "https://paytm-clone-backend-awbz.onrender.com" + "/api/v1/user/signup",
+                  import.meta.env.VITE_RENDER_SERVER_URL + "/api/v1/user/signup",
                   {
                     username,
                     firstName,

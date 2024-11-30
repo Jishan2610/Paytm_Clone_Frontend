@@ -8,9 +8,14 @@ export const Users = () => {
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
+    const userToken = localStorage.getItem("token");
     axios
       .get(
-        "https://paytm-clone-backend-awbz.onrender.com" + "/api/v1/user/bulk?filter=" + filter
+        import.meta.env.VITE_RENDER_SERVER_URL + "/api/v1/user/bulk?filter=" + filter , {
+          headers: {
+            'Authorization': `Bearer ${userToken}` // Add this line
+          }
+        }
       )
       .then((response) => {
         setUsers(response.data.user);

@@ -45,7 +45,7 @@ export const Signin = () => {
             <Button
               onClick={async () => {
                 const response = await axios.post(
-                  "https://paytm-clone-backend-awbz.onrender.com" + "/api/v1/user/signin",
+                  import.meta.env.VITE_RENDER_SERVER_URL + "/api/v1/user/signin",
                   {
                     username,
                     password,

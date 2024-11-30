@@ -18,7 +18,7 @@ export const Dashboard = () => {
     } else {
       // Fetch balance if token exists
       axios
-        .get("https://paytm-clone-backend-awbz.onrender.com" + "/api/v1/account/balance", {
+        .get(import.meta.env.VITE_RENDER_SERVER_URL + "/api/v1/account/balance", {
           headers: {
             Authorization: "Bearer " + userToken,
           },
